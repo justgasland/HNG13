@@ -8,10 +8,10 @@ import requests
 class MeView(APIView):
     
     def get(self, request):
-        now = datetime.utcnow().isoformat(timespec='milliseconds') + 'Z'
+        timestamp = datetime.utcnow().isoformat(timespec='milliseconds') + 'Z'
         api_status = status.HTTP_200_OK
 
-        cat_fact = "Cats are amazing creatures."
+        cat_fact = ""
         try:
             r = requests.get('https://catfact.ninja/fact', timeout=5)
             if r.status_code == 200:
@@ -22,10 +22,10 @@ class MeView(APIView):
                 cat_fact = "Could not fetch cat fact right now."
                 api_status = status.HTTP_503_SERVICE_UNAVAILABLE
         except requests.exceptions.Timeout:
-            cat_fact = "The cat fact service took too long to respond."
+            cat_fact = "The server took too long to respond."
             api_status = status.HTTP_503_SERVICE_UNAVAILABLE
         except requests.exceptions.RequestException:
-            cat_fact = "Something went wrong fetching the cat fact."
+            cat_fact = "Something went wrong while fetching the fact."
             api_status = status.HTTP_503_SERVICE_UNAVAILABLE
         except Exception:
             cat_fact = "An unexpected error occurred."
@@ -34,11 +34,11 @@ class MeView(APIView):
         data = {
             "status": "success" if api_status == status.HTTP_200_OK else "error",
             "user": {
-                "email": config('MY_EMAIL'),
-                "name": config('MY_NAME'),
+                "email": config('EMAIL'),
+                "name": config('NAME'),
                 "stack": "Python/Django"
             },
-            "timestamp": now,
+            "timestamp": timestamp,
             "fact": cat_fact
         }
 
