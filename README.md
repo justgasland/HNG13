@@ -90,3 +90,7 @@ pip install -r requirements.txt
 * If the Cat Facts API fails, a fallback message is returned.
 * Rate limiting is enabled to prevent abuse.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
