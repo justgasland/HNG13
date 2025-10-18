@@ -1,1 +1,1 @@
-web: gunicorn backend_wizards.wsgi --log-file -
+web: gunicorn task.wsgi --log-file -
