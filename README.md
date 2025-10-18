@@ -68,6 +68,18 @@ You should get a JSON response like this:
   "fact": "Cats sleep 70% of their lives."
 }
 ```
+## Live API
+
+**Base URL:**
+[https://djangocatapp.up.railway.app/](https://djangocatapp.up.railway.app/)
+
+**Endpoint:**
+`GET /me`
+
+**Full URL:**
+[https://djangocatapp.up.railway.app/me](https://djangocatapp.up.railway.app/me)
+
+---
 
 ### Dependencies
 
