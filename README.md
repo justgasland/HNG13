@@ -22,8 +22,8 @@ virtualenv venv
 Activate your environment.
 
 ```bash
-source venv/bin/activate     # For Mac/Linux
-venv\Scripts\activate        # For Windows users
+source venv/bin/activate     
+venv\Scripts\activate        
 ```
 
 Install the project dependencies.
@@ -77,6 +77,7 @@ You should get a JSON response like this:
 * python-decouple
 * requests
 * django_ratelimit
+* Cors headers
 
 Install them all with:
 
