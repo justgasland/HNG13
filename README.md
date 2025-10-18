@@ -1,6 +1,4 @@
-Got it — here’s a clean, amateur-style README written like your YouTube example, but for your **/me API project**. Simple, no fluff, no AI tone:
 
----
 
 ### 🐱 Django Cat Facts API
 
