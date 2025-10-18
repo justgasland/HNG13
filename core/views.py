@@ -23,7 +23,7 @@ class MeView(APIView):
             
 
 
-
+        #  time stamp
         timestamp = datetime.utcnow().isoformat(timespec='milliseconds') + 'Z'
         api_status = status.HTTP_200_OK
 
